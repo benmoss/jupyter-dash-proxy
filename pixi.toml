@@ -2,7 +2,7 @@
 authors = ["Ben Moss <bmoss40@bloomberg.net>"]
 channels = ["conda-forge"]
 name = "caddy-demo"
-platforms = ["osx-arm64"]
+platforms = ["osx-arm64", "linux-64", "osx-64"]
 version = "0.1.0"
 
 [tasks]
