@@ -17,9 +17,13 @@ When embedding a Dash app in Jupyter and proxying with Caddy:
 - Even with `DASH_PROXY` set, Dash does not serve iframe content on the proxied port (`1234`).
 - This can cause issues with access, authentication, and cross-origin requests.
 
+## Requirements
+- https://pixi.sh/latest/
+
 ## Usage
 
-`pixi run start` will start both Caddy and Jupyter. Open http://localhost:1234/jupyter/lab/tree/dash.ipynb after the servers have started to view the Dash notebook.
+- `pixi run start` will start both Caddy and Jupyter
+- Open http://localhost:1234/jupyter/lab/tree/dash.ipynb to view the Dash notebook
 
 ## Known Issue
 
