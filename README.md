@@ -21,11 +21,9 @@ When embedding a Dash app in Jupyter and proxying with Caddy:
 
 `pixi run start` will start both Caddy and Jupyter. Open http://localhost:1234/jupyter/lab/tree/dash.ipynb after the servers have started to view the Dash notebook.
 
-Running the cell will print the message `Dash app running on http://127.0.0.1:8050/dash/` which is the wrong url. It should be [http://127.0.0.1:1234/dash/]().
-
 ## Known Issue
 
-Dash's iframe in Jupyter will still reference `localhost:8050`, not the proxied port (`1234`). Setting `DASH_PROXY` does not resolve this.
+Running the cell will print the message `Dash app running on http://127.0.0.1:8050/dash/` which is the wrong url. It should be [http://127.0.0.1:1234/dash/]().
 
 ## References
 
