@@ -1,0 +1,33 @@
+:1234 {
+    # Redirect root to /jupyter
+    @root {
+        path /
+    }
+    redir @root /jupyter
+
+    # Optional: make /jupyter -> /jupyter/ (Jupyter often expects trailing slash)
+    @jupyter_root {
+        path /jupyter
+    }
+    redir @jupyter_root /jupyter/
+
+    # Optional: make /dash -> /dash/
+    @dash_root {
+        path /dash
+    }
+    redir @dash_root /dash/
+
+    # Proxy Jupyter Lab (keep /jupyter prefix)
+    handle /jupyter* {
+        reverse_proxy localhost:8890 {
+            header_up X-Forwarded-Prefix /jupyter
+        }
+    }
+
+    # Proxy Dash (keep /dash prefix)
+    handle /dash* {
+        reverse_proxy localhost:8050 {
+            header_up X-Forwarded-Prefix /dash
+        }
+    }
+}
